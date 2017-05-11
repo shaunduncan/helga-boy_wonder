@@ -93,7 +93,7 @@ def boy_wonder(client, channel, nick, message, cmd, args):
     if message.strip().endswith('!'):
         expression = ' '.join([HOLY, EXPRESSIONS[randint(0, len(EXPRESSIONS) - 1)]])
 
-        # 10% chance of adding a suffix other than '!'
+        # 10% chance of adding each suffix other than '!'
         suffix_index = randint(0, 9)
         if suffix_index < len(SUFFIXES) - 1:
             expression += SUFFIXES[suffix_index]
