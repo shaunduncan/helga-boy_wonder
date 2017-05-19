@@ -84,8 +84,7 @@ SUFFIXES = [
 ]
 
 
-@command('boy_wonder', aliases['x'], help='Holy Interplanetary Yardstick!')
-def boy_wonder(client, channel, nick, message, cmd, args):
+def holy_exclamation(message):
     """
     If message ends with exclamation point, return a random
     Robin the Boy Wonder expression.
@@ -100,3 +99,8 @@ def boy_wonder(client, channel, nick, message, cmd, args):
         else:
             expression += SUFFIXES[len(SUFFIXES) - 1]
         return expression
+
+
+@match(holy_exclamation, priority=0)
+def boy_wonder(client, channel, nick, message, match)
+    return match # pragma: no cover
