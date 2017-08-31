@@ -2,7 +2,6 @@ from random import randint
 
 from helga.plugins import match
 
-
 EXPRESSIONS = [
     "Agility", "Almost", "Alphabet", "Alps", "Alter Ego", "Anagram", "Apparition",
     "Armadillo", "Armour Plate", "Ashtray", "Asp", "Astronomy", "Astringent Plum-like Fruit",
@@ -92,12 +91,12 @@ def holy_exclamation(message):
     if message.strip().endswith('!'):
         expression = ' '.join([HOLY, EXPRESSIONS[randint(0, len(EXPRESSIONS) - 1)]])
 
-        # 10% chance of adding each suffix other than '!'
-        suffix_index = randint(0, 9)
+        # 20% chance of adding each suffix other than '!'
+        suffix_index = randint(0, 4)
         if suffix_index < len(SUFFIXES) - 1:
             expression += SUFFIXES[suffix_index]
         else:
-            expression += SUFFIXES[len(SUFFIXES) - 1]
+            expression += SUFFIXES[-1]
         return expression
 
 
