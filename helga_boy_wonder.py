@@ -1,6 +1,6 @@
 from random import randint
 
-from helga.plugins import command
+from helga.plugins import match
 
 
 EXPRESSIONS = [
@@ -102,5 +102,5 @@ def holy_exclamation(message):
 
 
 @match(holy_exclamation, priority=0)
-def boy_wonder(client, channel, nick, message, match)
+def boy_wonder(client, channel, nick, message, match):
     return match # pragma: no cover
